@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+import markdown
 
 from .models import Blog
 
@@ -12,7 +13,6 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Blog.objects.all()
 
-
 class DetailView(generic.DetailView):
     model = Blog
-    template_name = 'blog/editor.html'
+    template_name = 'blog/stackedittextarea.html'
